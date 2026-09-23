@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerMovement2D : MonoBehaviour
 {
-    public float moveSpeed = 0f;
+    public float moveSpeed = 5f;
 
-    public float jumpForce = 14f;
+    public float jumpForce = 7f;
     
-    
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private float moveInput;
@@ -20,6 +22,11 @@ public class PlatformerMovement2D : MonoBehaviour
     void Update()
     {
         ReadInput();
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     private void ReadInput()
@@ -35,9 +42,22 @@ public class PlatformerMovement2D : MonoBehaviour
 
     private void Jump()
     {
-        rb.linearVelocityY = jumpForce;
+        if (IsGrounded())
+        {
+            rb.linearVelocityY = jumpForce;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    private void Move()
+    {
+        rb.linearVelocityX = moveInput * moveSpeed;
     }
 }
 
 
-// Video Time = 3:42
+// Video Time = FINISHED
