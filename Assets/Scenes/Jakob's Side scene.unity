@@ -584,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 1038025078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.26, y: 0.83, z: 0}
+  m_LocalPosition: {x: 19.24, y: -2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -819,7 +819,7 @@ Transform:
   m_GameObject: {fileID: 1669808493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.18, z: 0}
+  m_LocalPosition: {x: 16.03, y: -2.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -838,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8737635c01369d84fb1c61e6d192af24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformerMovement2D
+  animator: {fileID: 0}
   moveSpeed: 5
   jumpForce: 15
   groundCheck: {fileID: 157823849}
