@@ -1,8 +1,7 @@
-using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Hazard : MonoBehaviour
+public class GoalFinal : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +19,8 @@ public class Hazard : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Death");
+            Debug.Log("Change the scene!");
+            SceneManager.LoadScene("Win Screen");
         }
-    }
+    } 
 }
