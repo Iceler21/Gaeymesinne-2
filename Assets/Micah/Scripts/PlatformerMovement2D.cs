@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerMovement2D : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     public float moveSpeed = 5f;
 
     public float jumpForce = 7f;
@@ -56,6 +57,14 @@ public class PlatformerMovement2D : MonoBehaviour
     private void Move()
     {
         rb.linearVelocityX = moveInput * moveSpeed;
+        if (moveInput != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 }
 
