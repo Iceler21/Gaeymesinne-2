@@ -57,6 +57,16 @@ public class PlatformerMovement2D : MonoBehaviour
     private void Move()
     {
         rb.linearVelocityX = moveInput * moveSpeed;
+        
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
         if (moveInput != 0)
         {
             animator.SetBool("isRunning", true);
